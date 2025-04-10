@@ -1,9 +1,9 @@
 <h2 align="center">
-    ───「 ᴄʟᴏɴɪғʏ 」───
+    ───「 ʀᴀᴅʜᴇ ᴍᴜsɪᴄ 」───
 </h2>
 
 <p align="center">
-  <img src="https://i.ibb.co/23JNhkRC/clonify.jpg">
+  <img src="https://envs.sh/Oii.jpg">
 </p>
 
 <p align="center">
