@@ -5,7 +5,7 @@ from typing import Union
 
 from pyrogram import Client
 from pyrogram.types import InlineKeyboardMarkup
-from pytgcalls.types.stream import StreamType
+from pytgcalls import PyTgCalls, StreamType
 from pytgcalls.exceptions import (
     AlreadyJoinedError,
     NoActiveGroupCall,
@@ -36,7 +36,6 @@ from Clonify.utils.formatters import check_duration, seconds_to_min, speed_conve
 from Clonify.utils.inline.play import stream_markup
 from Clonify.utils.stream.autoclear import auto_clean
 from strings import get_string
-from Clonify.utils.thumbnails import get_thumb
 
 autoend = {}
 counter = {}
@@ -51,7 +50,7 @@ async def _clear_(chat_id):
 class Call(PyTgCalls):
     def __init__(self):
         self.userbot1 = Client(
-            name="RAUSHANAss1",
+            name="AARVIAss1",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING1),
@@ -355,7 +354,7 @@ class Call(PyTgCalls):
                     )
                 except:
                     try:
-                        file_path, direct = await YouTube.download(
+                        file_path, direct = await YTB.download(
                             videoid,
                             mystic,
                             videoid=True,
@@ -384,7 +383,7 @@ class Call(PyTgCalls):
                         text=_["call_6"],
                     )
                 img = await get_thumb(videoid)
-                button = stream_markup(_, chat_id)
+                button = stream_markup(videoid, chat_id, _)
                 await mystic.delete()
                 run = await app.send_text(
                     chat_id=original_chat_id,
@@ -472,8 +471,7 @@ class Call(PyTgCalls):
                     db[chat_id][0]["mystic"] = run
                     db[chat_id][0]["markup"] = "tg"
                 else:
-                    img = await get_thumb(videoid)
-                    button = stream_markup(_, chat_id)
+                    button = stream_markup(videoid, chat_id, _)
                     run = await app.send_photo(
                         chat_id=original_chat_id,
                         photo=img,
