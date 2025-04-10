@@ -23,8 +23,8 @@ class Userbot(Client):
         if config.STRING1:
             await self.one.start()
             try:
-                await self.one.join_chat("ProBotGc")
-                await self.one.join_chat("ProBotts")
+                await self.one.join_chat("ll_BOTCHAMBER_ll")
+                await self.one.join_chat("ll_BOTCHAMBER_ll")
             except:
                 pass
             assistants.append(1)
